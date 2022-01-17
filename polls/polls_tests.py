@@ -47,7 +47,7 @@ class QuestionModelTests(TestCase):
         self.assertIs(recent_question.was_published_recently(), True)
 
     def test_flaky_test(self):
-        self.assertEqual(1, 1)
+        self.assertEqual(1, 2)
 
 
 class QuestionIndexViewTests(TestCase):
