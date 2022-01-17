@@ -53,9 +53,8 @@ jobs:
           pypi-cache: false
       - run:
           command: |
-            pylint polls --exit-zero
+            pylint polls
           name: linting
-
 
 
   build-and-push-image:
@@ -70,17 +69,6 @@ jobs:
       - gcp-gcr/push-image:
           image: circle-gke
           tag: "v10"
-
-
-#  deploy:
-#    machine: true
-#    description: Deploy application to Google Kubernetes Engine
-#    steps:
-#      - gcp-gke/install
-#      - gcp-gke/publish-and-rollout-image:
-#          deployment: circle-ci-cluster
-#          container: alec-backend
-#          image: gcr.io/circle-ci-demo/circle-gke:v10
 
 workflows:
    main:
