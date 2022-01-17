@@ -46,6 +46,9 @@ class QuestionModelTests(TestCase):
         recent_question = Question(pub_date=time)
         self.assertIs(recent_question.was_published_recently(), True)
 
+    def test_flaky_test(self):
+        self.assertEqual(1, 2)
+
 
 class QuestionIndexViewTests(TestCase):
     def test_no_questions(self):
@@ -104,6 +107,3 @@ class QuestionIndexViewTests(TestCase):
             response.context['latest_question_list'],
             [question2, question1], transform=lambda x: x,
         )
-
-    def flaky_test(self):
-        assertEqual(1, 2)
