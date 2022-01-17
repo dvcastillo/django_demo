@@ -106,4 +106,4 @@ class QuestionIndexViewTests(TestCase):
         )
 
     def flaky_test(self):
-        assert(1 == 2)
+        assertEqual(1, 2)
