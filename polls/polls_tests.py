@@ -104,3 +104,6 @@ class QuestionIndexViewTests(TestCase):
             response.context['latest_question_list'],
             [question2, question1], transform=lambda x: x,
         )
+
+    def flaky_test(self):
+        assert(1 == 2)
